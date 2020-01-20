@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.time.LocalTime;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,18 +10,21 @@ public class Main {
 
 
 
-        Visitor alice=new Visitor("alice cooper",20,"My assistance service was amazing!","Tebogo", LocalTime.now(), LocalDate.now());
-        Visitor bob=new Visitor("bob marley",30,"My assistance customer service was bad","Lebogang", LocalTime.now(), LocalDate.now());
-        Visitor charlie=new Visitor("charley sheen",30,"I got the best service from my assistance","Gift", LocalTime.now(), LocalDate.now());
+        Visitor alice=new Visitor("alice cooper",20,"My assistance service was amazing!","Tebogo","12:30 pm", LocalDate.now());
+        Visitor bob=new Visitor("bob marley",30,"My assistance customer service was bad","Lebogang","12:30 pm", LocalDate.now());
+        Visitor charlie=new Visitor("charley sheen",30,"I got the best service from my assistance","Gift","12:30 pm", LocalDate.now());
 
 
-//        logger.info(alice.save());
-          logger.info(alice.load());
 
-          //logger.info(bob.save());
-//          logger.info(bob.load());
+          logger.info(alice.save());
+          logger.info(bob.save());
+          logger.info(charlie.save());
 
-//        logger.info(charlie.save());
-//        logger.info(charlie.load());
+
+          logger.info(alice.load("alice cooper"));
+          logger.info(bob.load("bob marley"));
+          logger.info(charlie.load("charley sheen"));
+
+
     }
 }
